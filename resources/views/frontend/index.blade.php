@@ -14,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/home.css') }}">
 
     <!-- Utilities -->
-    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/utilities.css') }}">
 
     <style>
       html, body, main, .container{
@@ -26,7 +26,7 @@
       }
     </style>
 
-    <title>Arya Ashari - Homepage</title>
+    <title>Arya Ashari - Home</title>
   </head>
   <body id="home">
 

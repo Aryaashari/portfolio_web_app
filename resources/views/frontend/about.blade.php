@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/about.css') }}">
 @endpush
 
+@section('id', 'about')
 @section('content')
     <!-- Start Bio Area -->
     <div class="bio">
