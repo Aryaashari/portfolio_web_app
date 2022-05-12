@@ -1,0 +1,124 @@
+/* === Button === */
+#home .btn_primary {
+    margin-top: -85px !important;
+}
+
+
+
+
+/* Profile Area */
+.profile_border {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid #F35045;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('../img/profile.png');
+    background-size: cover;
+}
+
+
+.name_text {
+    font-weight: 600;
+    font-size: 32px;
+    color: white;
+}
+
+.job_text {
+    font-weight: 200;
+    font-size: 16px;
+    color: white;
+}
+
+
+
+/* Menu Area */
+.menu {
+    margin-top: -70px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    list-style: none;
+    margin-right: 70px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu li a:hover::after {
+    content: ' ';
+    display: block;
+    width: 50%;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #F35045;
+    margin-top: 3px;
+}
+
+.menu li a.active {
+    font-weight: 500;
+}
+
+.menu li a.active::after {
+    content: ' ';
+    display: block;
+    width: 50%;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #F35045;
+    margin-top: 3px;
+}
+
+
+
+/* Mobile Devices */
+@media (max-width: 767px) { 
+    
+
+    /* Menu Area */
+    .menu ul li a {
+        font-size: 13px;
+    }
+
+    .menu li {
+        margin-right: 40px;
+    }
+
+
+
+    /* Profile Area */
+    .profile_border {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile_picture {
+        height: 130px;
+        width: 130px;
+    }
+
+    .name_text {
+        font-size: 28px;
+    }
+
+    .job_text {
+        font-size: 13px;
+    }
+
+
+}

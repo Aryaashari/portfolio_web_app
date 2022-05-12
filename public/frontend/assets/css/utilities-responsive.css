@@ -1,0 +1,21 @@
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+
+    /* === Section Title Style === */
+    .ut_section_title {
+        font-size: 25px;
+    }
+
+
+    /* === Sosmed Icon Badge Style === */
+    .ut_sosmed_icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .ut_sosmed_icon img {
+        width: 28px;
+    }
+
+}

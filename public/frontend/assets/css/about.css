@@ -1,0 +1,194 @@
+/* Bio Area */
+.bio {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.profile_picture {
+    width: 300px;
+    height: 400px;
+    /* background-color: red; */
+    background-image: url('../img/profile.png');
+    background-size: cover;
+    background-position-x: center;
+    margin: auto;
+}
+
+.bio_text {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.sosmed_icon {
+    margin-top: 50px;
+}
+
+.sosmed_icon a {
+    margin-right: 5px;
+}
+
+#about .btn {
+    margin-top: 50px;
+}
+
+
+
+/* Educations Area */
+.educations {
+    background-color: #F35045;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+}
+
+.educations .right_col {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.education_title {
+    display: flex;
+    align-items: center;
+}
+
+.education_title h5 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.education_title p {
+    font-weight: 300;
+    font-size: 14px;
+    margin-left: 22px;
+    margin-bottom: 3px;
+}
+
+.arrow {
+    width: 60px;
+}
+
+.arrow_bottom {
+    transform: rotate(90deg);
+}
+
+.arrow_left {
+    transform: rotate(180deg);
+}
+
+
+
+
+/* Skill Area */
+.skills {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.skill {
+    margin-bottom: 40px;
+}
+
+.skill_title {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.skill_title h5 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.skill_title p {
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.progress {
+    height: .5rem !important;
+}
+
+.progress-bar {
+    background-color: #F35045 !important;
+}
+
+
+
+
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+
+    /* Bio Area */
+    .bio {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .profile_picture {
+        width: 250px;
+        height: 350px;
+        margin-bottom: 15px;
+    }
+
+    .bio_text {
+        font-size: 13px;
+    }
+
+    .sosmed_icon {
+        margin-top: 20px;
+    }
+
+    #about .btn {
+        margin-top: 20px;
+    }
+
+
+
+    /* Education Area */
+    .educations {
+        padding-bottom: 10px;
+    }
+
+    .educations .right_col {
+        justify-content: flex-start;
+    }
+
+    .education > p {
+        font-size: 15px;
+    }
+
+    .education_title h5 {
+        font-size: 25px;
+    }
+
+    .education_title p {
+        font-size: 12px;
+    }
+
+    
+    .university {
+        order: 3 !important;
+    }
+
+    .smk  {
+        order: 1 !important;
+    }
+
+    .sd, .university, .smk {
+        margin-bottom: 60px;
+    }
+
+    .smp, .university, .smk {
+        margin-top: 60px;
+    }
+
+
+    .arrow {
+        width: 50px;
+    }
+}
