@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\BlogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,26 +18,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend/index');
-});
+// Home
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/about', function () {
-    return view('frontend/about');
-});
+// About
+Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/projects', function () {
-    return view('frontend/project');
-});
+// Projects
+Route::get('/projects', [ProjectController::class, 'index']);
 
-Route::get('/blog', function () {
-    return view('frontend/blog');
-});
+// Blog
+Route::get('/blog', [BlogController::class, 'index']);
 
-Route::get('/single-post', function () {
-    return view('frontend/single-post');
-});
+Route::get('/single-post', [BlogController::class, 'singlePost']);
 
-Route::get('/post-category', function () {
-    return view('frontend/post-category');
-});
+Route::get('/post-category', [BlogController::class, 'postCategory']);

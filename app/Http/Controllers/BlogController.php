@@ -14,7 +14,15 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        return view('frontend.blog');
+    }
+
+    public function singlePost() {
+        return view('frontend.single-post');
+    }
+
+    public function postCategory() {
+        return view('frontend.post-category');
     }
 
     /**
