@@ -24,7 +24,7 @@
 
                   <div class="post_info">
                       <p>Admin - 3 hours ago</p>
-                      <a href="post-category.html">Website</a>
+                      <a href="{{ url('/post-category') }}">Website</a>
                   </div>
 
                   <div class="post_body">
@@ -133,7 +133,7 @@
                 <div class="post_categories">
                   <h5>Post Categories</h5>
                   
-                  <a href="post-category.html">
+                  <a href="{{ url('/post-category') }}">
                     <div class="post_category">
                       <h6>Website</h6>
                       <p>10</p>

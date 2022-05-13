@@ -58,16 +58,16 @@
           <div class="col-12 menu">
             <ul>
               <li>
-                <a href="index.html" class="active">Home</a>
+                <a href="{{ url('/') }}" class="active">Home</a>
               </li>
               <li>
-                <a href="about.html">About</a>
+                <a href="{{ url('/about') }}">About</a>
               </li>
               <li>
-                <a href="project.html">Projects</a>
+                <a href="{{ url('/projects') }}">Projects</a>
               </li>
               <li>
-                <a href="blog.html">Blog</a>
+                <a href="{{ url('/blog') }}">Blog</a>
               </li>
             </ul>
           </div>

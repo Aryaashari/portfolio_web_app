@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/blog.css') }}">
 @endpush
 
-@yield('id', 'projects')
+@section('id', 'projects')
 @section('content')
 
     <!-- Start Banner Area  -->
@@ -45,9 +45,9 @@
                             <div class="post_category">Website</div>
                         </div>
                         <div class="post_text">
-                            <a href="single-post.html" class="post_title">Pengenalan dasar website dengan menggunakan HTML, CSS, JS</a>
+                            <a href="{{ url('/single-post') }}" class="post_title">Pengenalan dasar website dengan menggunakan HTML, CSS, JS</a>
                             <p>Admin - 2 hours ago</p>
-                            <a href="single-post.html" class="ut_btn_primary btn">Read</a>
+                            <a href="{{ url('/single-post') }}" class="ut_btn_primary btn">Read</a>
                         </div>
                     </div>
 

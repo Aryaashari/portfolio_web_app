@@ -34,16 +34,16 @@
         <div class="container-fluid">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link {{ (request()->is('/') ? 'active' : '') }}" aria-current="page" href="{{ url('/') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="about.html">About</a>
+                <a class="nav-link {{ (request()->is('about') ? 'active' : '') }}" href="{{ url('/about') }}">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="project.html">Projects</a>
+                <a class="nav-link {{ (request()->is('projects') ? 'active' : '') }}" href="{{ url('/projects') }}">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link {{ (request()->is('blog') ? 'active' : '') }}" href="{{ url('/blog') }}">Blog</a>
               </li>
             </ul>
         </div>
