@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->text('profile_description');
+            $table->string('profile_picture');
+            $table->string('cv_file');
         });
     }
 
