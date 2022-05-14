@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('education_name',10);
             $table->string('education_description');
-            $table->int('start_year',4);
-            $table->int('end_year',4);
-            $table->int('order',1);
+            $table->year('start_year',4);
+            $table->year('end_year',4);
+            $table->integer('order',1);
         });
     }
 
