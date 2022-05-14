@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Reply extends Model
 {
     use HasFactory;
+
+
+    // Relation with comments table
+    public function comment() {
+        return $this->belongsTo(Comment::class);
+    }
 }

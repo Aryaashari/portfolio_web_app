@@ -14,4 +14,9 @@ class Comment extends Model
     public function post() {
         return $this->belongsTo(Post::class);
     }
+
+    // Relation with replies table
+    public function reply() {
+        return $this->hasMany(Reply::class);
+    }
 }
