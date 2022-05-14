@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('set null');
-            $table->string('title');
-            $table->string('author')->default('admin');
-            $table->text('body');
-            $table->timestamps();
-        });
+        // Schema::create('posts', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('category_id')->references('id')->on('categories')->onDelete('set null');
+        //     $table->string('title');
+        //     $table->string('author')->default('admin');
+        //     $table->text('body');
+        //     $table->timestamps();
+        // });
     }
 
     /**
