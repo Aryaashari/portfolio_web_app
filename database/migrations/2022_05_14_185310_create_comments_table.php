@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->string('username',10)->default('anonymous');
+            $table->string('email');
+            $table->text('comment');
             $table->timestamps();
         });
     }
