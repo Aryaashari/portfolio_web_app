@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +20,16 @@ use App\Http\Controllers\BlogController;
 */
 
 // Home
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [PageController::class, 'home']);
 
 // About
-Route::get('/about', [AboutController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
 
 // Projects
-Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/projects', [PageController::class, 'projects']);
 
 // Blog
-Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog', [PageController::class, 'blog']);
 
 Route::get('/single-post', [BlogController::class, 'singlePost']);
 
