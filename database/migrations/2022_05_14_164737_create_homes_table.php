@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('cv_file');
+            $table->string('profile_picture');
             $table->timestamps();
         });
     }
