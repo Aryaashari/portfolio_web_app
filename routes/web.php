@@ -23,7 +23,7 @@ use App\Http\Controllers\PageController;
 Route::get('/', [HomeController::class, 'index']);
 
 // About
-Route::get('/about', [PageController::class, 'about']);
+Route::get('/about', [AboutController::class, 'index']);
 
 // Projects
 Route::get('/projects', [PageController::class, 'projects']);
