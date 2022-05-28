@@ -30,7 +30,12 @@
   </head>
   <body id="home">
 
+    {{-- Data roles --}}
+    {{-- @foreach ($roles as $role)
+      
+      <input type="hidden" class="roles_data" name="roles[]" value="{{ $role }}">
 
+    @endforeach --}}
 
     <!-- Start Main Area -->
     <main>
@@ -52,7 +57,7 @@
           </div>
 
           <div class="col-12" style="margin-top: -100px;">
-            <a href="#" class="btn ut_btn_primary mt-3 d-block m-auto">Download CV</a>
+            <a href="{{ asset('storage/CV.pdf') }}" download="cv-arya" class="btn ut_btn_primary mt-3 d-block m-auto">Download CV</a>
           </div>
 
           <div class="col-12 menu">
@@ -93,8 +98,14 @@
 
     <!-- Typing Effect -->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script>
 
+    <script>
+      // let role = document.getElementsByClassName('roles_data').value;
+      // let roles = []
+
+      // role.forEach(element => {
+      //   roles.append(element)
+      // });
       new Typewriter('#job', {
         strings: ['Student', 'Web Developer'],
         autoStart: true,
