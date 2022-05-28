@@ -47,7 +47,7 @@
           </div>
 
           <div class="col-12 text-center">
-            <h2 class="name_text">Arya Ashari</h2>
+            <h2 class="name_text">{{ $profile->name }}</h2>
             <p class="job_text">I'm a <span id="job"></span></p>
           </div>
 

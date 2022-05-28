@@ -20,7 +20,7 @@ use App\Http\Controllers\PageController;
 */
 
 // Home
-Route::get('/', [PageController::class, 'home']);
+Route::get('/', [HomeController::class, 'index']);
 
 // About
 Route::get('/about', [PageController::class, 'about']);
