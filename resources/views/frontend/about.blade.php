@@ -13,51 +13,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12">
-                    <div class="profile_picture"></div>
+                    <div class="profile_picture" style="background-image: url('{{ asset('storage/profile/'.$profile->profile_picture) }}');"></div>
                 </div>
                 <div class="col-md-6 col-12">
-                    <h3 class="ut_section_title">About Me</h3>
-                    <p class="bio_text mt-3">My name is Arya Ashari. I’m a Student of Computer Science I’m very passionate about computer science. I always enjoy for what i do now, everyday i’m learning about something new in computer science and i’m very intersted. I have a spirit to become a personal success </p>
+                    <h3 class="ut_section_title">{{ $pageName }}</h3>
+                    <p class="bio_text mt-3">{{$profile->profile_description}} </p>
 
                     <div class="sosmed_icon d-flex">
-                        <a href="https://www.instagram.com/aryyashari/">
-                            <div class="ut_sosmed_icon">
-                                <img src="{{asset('frontend/assets/img/ig.png')}}" alt="instagram-icon">
-                            </div>
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCZoJflrz-XUZ3Yu49_P1R-Q">
-                            <div class="ut_sosmed_icon">
-                                <img src="{{asset('frontend/assets/img/yt.png')}}" alt="youtube-icon">
-                            </div>
-                        </a>
+                        @foreach ($sosmeds as $sosmed)
+                            
+                            <a href="{{ $sosmed->link }}" target="_blank">
+                                <div class="ut_sosmed_icon">
+                                    <img src="{{ asset('storage/sosmed/'.$sosmed->icon) }}" alt="{{$sosmed->name}}-icon">
+                                </div>
+                            </a>
 
-                        <a href="https://github.com/Aryaashari">
-                            <div class="ut_sosmed_icon">
-                                <img src="{{asset('frontend/assets/img/github.png')}}" alt="github-icon">
-                            </div>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/arya-ashari-321387196/">
-                            <div class="ut_sosmed_icon">
-                                <img src="{{asset('frontend/assets/img/linkedin.png')}}" alt="linkedin-icon">
-                            </div>
-                        </a>
-
-                        <a href="https://api.whatsapp.com/send?phone=6281215750405">
-                            <div class="ut_sosmed_icon">
-                                <img src="{{asset('frontend/assets/img/wa.png')}}" alt="whatsapp-icon">
-                            </div>
-                        </a>
-
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=aryaashari100@gmail.com&tf=cm">
-                            <div class="ut_sosmed_icon">
-                                <img src="{{asset('frontend/assets/img/email.png')}}" alt="email-icon">
-                            </div>
-                        </a>
+                        @endforeach
 
                     </div>
 
-                    <a href="#" class="ut_btn_primary btn">Download CV</a>
+                    <a href="{{ asset('storage/'.$profile->cv_file) }}" download="cv-arya" class="ut_btn_primary btn">Download CV</a>
 
                 </div>
             </div>
@@ -74,15 +49,15 @@
                     <h3 class="ut_section_title">Educations</h3>
                 </div>
             </div>
-
+                
             <div class="row mt-5 align-items-center">
                 <div class="col-md-5 col-12 sd">
                     <div class="education">
                         <div class="education_title">
-                            <h5>SD</h5>
-                            <p>2009 - 2015</p>
+                            <h5>{{ $education1->education_name }}</h5>
+                            <p>{{$education1->start_year}} - {{$education1->end_year}}</p>
                         </div>
-                        <p>SD YPKP 1 Sentani Kab Jayapura Papua</p>
+                        <p>{{$education1->education_description}}</p>
                     </div>
                 </div>
                 <div class="col-md-2 col-12">
@@ -91,13 +66,14 @@
                 <div class="col-md-5 right_col smp">
                     <div class="education">
                         <div class="education_title">
-                            <h5>SMP</h5>
-                            <p>2015 - 2018</p>
+                            <h5>{{ $education1->education_name }}</h5>
+                            <p>{{$education1->start_year}} - {{$education1->end_year}}</p>
                         </div>
-                        <p>SMP N 2 Sentani Kab Jayapura Papua</p>
+                        <p>{{$education1->education_description}}</p>
                     </div>
                 </div>
             </div>
+
 
             <div class="row mt-5 justify-content-end">
                 <div class="col-md-3 col-12">
@@ -105,14 +81,15 @@
                 </div>
             </div>
 
+
             <div class="row mt-5 align-items-center">
                 <div class="col-md-5 university -order-1">
                     <div class="education">
                         <div class="education_title">
-                            <h5>University</h5>
-                            <p>2021 - 2025</p>
+                            <h5>{{ $education4->education_name }}</h5>
+                            <p>{{$education4->start_year}} - {{$education4->end_year}}</p>
                         </div>
-                        <p>Telkom University Bandung</p>
+                        <p>{{$education4->education_description}}</p>
                     </div>
                 </div>
 
@@ -123,10 +100,10 @@
                 <div class="col-md-5 col-12 right_col smk order-3">
                     <div class="education">
                         <div class="education_title">
-                            <h5>SMK</h5>
-                            <p>2018 - 2021</p>
+                            <h5>{{ $education3->education_name }}</h5>
+                            <p>{{$education3->start_year}} - {{$education3->end_year}}</p>
                         </div>
-                        <p>SMK N 1 Sentani Kab Jayapura Papua</p>
+                        <p>{{$education3->education_description}}</p>
                     </div>
                 </div>
             </div>
