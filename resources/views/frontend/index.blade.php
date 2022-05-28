@@ -42,7 +42,7 @@
 
           <div class="col-12 d-flex align-items-center">
             <div class="profile_border m-auto">
-              <div class="profile_picture"></div>
+              <div class="profile_picture" style="background-image: url('{{ asset('storage/profile/'.$profile->profile_picture) }}');"></div>
             </div>
           </div>
 
