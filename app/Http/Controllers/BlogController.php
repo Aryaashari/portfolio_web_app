@@ -20,7 +20,13 @@ class BlogController extends Controller
     public function detail(Post $post) {
         $categories = Category::all();
         $comments = Comment::where("post_id", $post->id)->get();
-        
+
         return view('frontend.single-post', ["post" => $post, "categories" => $categories, "comments" => $comments]);
+    }
+
+    public function category(Category $category) {
+        $posts = $category->post()->get();
+
+        return view('frontend.post-category', ["posts" => $posts, "category" => $category]);
     }
 }
