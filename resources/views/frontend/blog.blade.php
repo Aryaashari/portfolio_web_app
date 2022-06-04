@@ -10,10 +10,10 @@
 @section('content')
 
     <!-- Start Banner Area  -->
-    <div class="banner" style="background-image: url({{ asset('frontend/assets/img/banner_project.png')}});">
+    <div class="banner" style="background-image: url({{ asset('storage/background/'.$blogPage->background_page)}});">
 
         <div class="banner_text">
-            <h2 class="banner_title">Blog</h2>
+            <h2 class="banner_title">{{ $blogPage->title }}</h2>
         </div>
 
         <a href="#post_section">

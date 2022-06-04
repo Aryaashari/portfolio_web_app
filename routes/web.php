@@ -29,7 +29,7 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/projects', [ProjectsController::class, 'index']);
 
 // Blog
-// Route::get('/blog', [PageController::class, 'blog']);
+Route::get('/blog', [BlogController::class, 'index']);
 
 // Route::get('/single-post', [BlogController::class, 'singlePost']);
 
