@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Category;
+use App\Models\Comment;
 
 class BlogController extends Controller
 {
@@ -13,5 +15,12 @@ class BlogController extends Controller
         $posts = Post::all();
         
         return view('frontend.blog', ["blogPage" => $blogPage, "posts" => $posts]);
+    }
+
+    public function detail(Post $post) {
+        $categories = Category::all();
+        $comments = Comment::where("post_id", $post->id)->get();
+        
+        return view('frontend.single-post', ["post" => $post, "categories" => $categories, "comments" => $comments]);
     }
 }

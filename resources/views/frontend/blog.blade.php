@@ -37,9 +37,9 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6 col-xl-4 col-12">
+                @foreach ($posts as $post)
+                    <div class="col-md-6 col-xl-4 col-12">
 
-                    @foreach ($posts as $post)
                         
                         <div class="post mt-4">
                             <div class="post_thumb" style="background-image: url({{ asset('storage/posts/'.$post->post_background) }});">
@@ -52,10 +52,10 @@
                             </div>
                         </div>
 
-                    @endforeach
-
-
-                </div>
+                        
+                        
+                    </div>
+                @endforeach
             </div>
         </div>
 

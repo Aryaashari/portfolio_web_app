@@ -30,6 +30,7 @@ Route::get('/projects', [ProjectsController::class, 'index']);
 
 // Blog
 Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog/post/{post:slug}', [BlogController::class, 'detail']);
 
 // Route::get('/single-post', [BlogController::class, 'singlePost']);
 

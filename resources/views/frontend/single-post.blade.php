@@ -18,84 +18,58 @@
           <div class="row">
               <div class="col-lg-9 col-12 post_content">
 
-                  <div class="post_image" style="background-image: url({{ asset('frontend/assets/img/project_1.jpg') }});"></div>
+                  <div class="post_image" style="background-image: url({{ asset('storage/posts/'.$post->post_background) }});"></div>
 
-                  <h1 class="post_title">Pengenalan dasar website dengan menggunakan HTML, CSS, JS</h1>
+                  <h1 class="post_title">{{ $post->title }}</h1>
 
                   <div class="post_info">
-                      <p>Admin - 3 hours ago</p>
-                      <a href="{{ url('/post-category') }}">Website</a>
+                      <p>{{ $post->author }} - {{ $post->created_at->diffForHumans() }}</p>
+                      <a href="{{ url('/blog/category/'.$post->category->category) }}">{{ $post->category->category }}</a>
                   </div>
 
                   <div class="post_body">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident labore doloribus sequi exercitationem atque consectetur. Sint doloremque possimus quae pariatur, quis saepe minus error voluptas voluptatibus, repellat accusantium assumenda vero tempora! Veritatis commodi nam fugit odio, vero cupiditate eius, obcaecati mollitia temporibus totam blanditiis cum inventore et eveniet vitae quo.</p>
-
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt quas, tenetur aliquam impedit facilis consequuntur, quo pariatur accusamus quaerat saepe enim. Ipsa pariatur, adipisci vitae est quisquam dicta accusantium fugit!</p>
-
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam inventore quasi obcaecati reprehenderit. Odit, impedit magni. Numquam quisquam dolorem corrupti accusamus assumenda impedit blanditiis iusto hic id autem reprehenderit animi nam incidunt eligendi, fugiat molestiae distinctio, tenetur nostrum eius? Illo consectetur dolore beatae similique voluptatem at aspernatur porro, sequi quo, numquam saepe eligendi velit qui iure voluptates, veritatis sint? Obcaecati vitae esse laudantium officiis consequuntur minus voluptatum dolorem quas animi magnam ex, voluptates qui earum vel sit quisquam, quidem accusamus nulla. Nisi tenetur cum deleniti, dolores cumque exercitationem voluptate assumenda quos, a consequatur omnis unde blanditiis nobis eos rem cupiditate.</p>
+                      <p>{{ $post->body }}</p>
                   </div>
 
 
                   <div class="post_comments">
-                    <h4>4 COMMENTS</h4>
+                    <h4>{{ count($comments) }} COMMENTS</h4>
 
-                    <div class="post_comment">
-                      
-                      <div class="post_comment_content">
-                        <img src="{{ asset('frontend/assets/img/user_lg.png') }}" alt="user-icon">
-
-                        <div class="comment_text">
-                          <h5 class="comment_username">Aryaashari</h5>
-                          <p class="comment_date">2 hours ago</p>
-                          <p class="comment">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, illo? Error doloribus facilis exercitationem esse hic consectetur autem quasi quas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, praesentium? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non cum, et deleniti assumenda sit ratione at porro ex eum repellendus.</p>
-                        </div>
-
-                        <!-- <a href="#" class="btn_reply">REPLY</a> -->
-
-                      </div>
-
-                      <div class="post_reply">
+                    @foreach ($comments as $comment)
+                      <div class="post_comment">
+                        
                         <div class="post_comment_content">
                           <img src="{{ asset('frontend/assets/img/user_lg.png') }}" alt="user-icon">
 
                           <div class="comment_text">
-                            <h5 class="comment_username">Aryaashari</h5>
-                            <p class="comment_date">2 hours ago</p>
-                            <p class="comment">Baik makasih banyak</p>
+                            <h5 class="comment_username">{{ $comment->username }}</h5>
+                            <p class="comment_date">{{ $comment->created_at->diffForHumans() }}</p>
+                            <p class="comment">{{ $comment->comment }}</p>
                           </div>
-                        </div>
-                      </div>
 
-                    </div>
+                          <!-- <a href="#" class="btn_reply">REPLY</a> -->
 
-                    <div class="post_comment">
-                      
-                      <div class="post_comment_content">
-                        <img src="{{ asset('frontend/assets/img/user_lg.png') }}" alt="user-icon">
-
-                        <div class="comment_text">
-                          <h5 class="comment_username">Aryaashari</h5>
-                          <p class="comment_date">2 hours ago</p>
-                          <p class="comment">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, illo? Error doloribus facilis exercitationem esse hic consectetur autem quasi quas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, praesentium? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non cum, et deleniti assumenda sit ratione at porro ex eum repellendus.</p>
                         </div>
 
-                        <!-- <a href="#" class="btn_reply">REPLY</a> -->
+                        @foreach ($comment->reply as $reply)
+                          
+                          <div class="post_reply">
+                            <div class="post_comment_content">
+                              <img src="{{ asset('frontend/assets/img/user_lg.png') }}" alt="user-icon">
 
-                      </div>
-
-                      <div class="post_reply">
-                        <div class="post_comment_content">
-                          <img src="{{ asset('frontend/assets/img/user_lg.png') }}" alt="user-icon">
-
-                          <div class="comment_text">
-                            <h5 class="comment_username">Aryaashari</h5>
-                            <p class="comment_date">2 hours ago</p>
-                            <p class="comment">Baik makasih banyak</p>
+                              <div class="comment_text">
+                                <h5 class="comment_username">admin</h5>
+                                <p class="comment_date">{{ $reply->created_at->diffForHumans() }}</p>
+                                <p class="comment">{{ $reply->comment }}</p>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
+                          
+                        @endforeach
 
-                    </div>
+                      </div>
+                    @endforeach
+                    
 
 
 
@@ -133,12 +107,16 @@
                 <div class="post_categories">
                   <h5>Post Categories</h5>
                   
-                  <a href="{{ url('/post-category') }}">
-                    <div class="post_category">
-                      <h6>Website</h6>
-                      <p>10</p>
-                    </div>
-                  </a>
+                  @foreach ($categories as $category)
+                    
+                    <a href="{{ url('/blog/category/'.$category->category) }}">
+                      <div class="post_category">
+                        <h6>{{ $category->category }}</h6>
+                        <p>{{ count($category->post()->get()) }}</p>
+                      </div>
+                    </a>
+
+                  @endforeach
                   
 
                 </div>
