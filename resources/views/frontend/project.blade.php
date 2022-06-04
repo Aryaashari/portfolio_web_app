@@ -35,7 +35,7 @@
                     
                     <div class="col-lg-6 col-12 d-flex justify-content-center">
                         <div class="project">
-                            <div class="project_thumb" style="background-image: url({{ asset('storage/projects/'.$project->project_pciture) }});"></div>
+                            <div class="project_thumb" style="background-image: url({{ asset('storage/projects/'.$project->project_picture) }});"></div>
                             <div class="project_text">
                                 <a href="{{ $project->project_link }}"><h5 class="project_title">{{ $project->project_name }}</h5></a>
 
