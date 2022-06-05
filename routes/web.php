@@ -27,6 +27,6 @@ Route::get('/blog/category/{category:category}', [BlogController::class, 'catego
 Route::prefix('admin')->group(function() {
 
     // Dashboard
-    Route::view('/dashboard', 'admin.layouts.main');
+    Route::view('/dashboard', 'admin.dashboard.index');
 
 });
